@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: sec7
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:eazybank}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
+
+  jpa:
+    show-sql: ${JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        show_sql: ${HIBERNATE_FORMAT_SQL:false}
+
+logging:
+  level:
+    org:
+      springframework:
+        security: ${SPRING_SECURITY_LOG_LEVEL:trace}
